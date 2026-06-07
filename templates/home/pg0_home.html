@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Sistema Loja</title>
+
+        <link  rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<body>
+    <h1>Sistema Loja</h1>
+    <hr>
+    <h2>Menu Principal</h2>
+    <ul>
+        <li> <a href="{{ url_for('cliente.root') }}"> Clientes </a> </li>
+        <li> <a href="{{ url_for('produto.root') }}"> Produtos </a> </li>
+        <li> <a href="{{ url_for('usuario.root') }}"> Usuários </a> </li>
+        <li> <a href="{{ url_for('venda.root') }}"> Vendas </a> </li>
+    </ul>
+    <hr>
+    <a href="{{ url_for('login.logout') }}"> Logout  </a>
+
+    <h3>Usuário: {{ session['usuario'] }}</h3>
+    <h3>Cargo: {{ session['cargo'] }}</h3>
+    <h3>Nível: {{ session['nivel'] }}</h3>
+
+</body>
+</html>
+
